@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --num: 22; /*Number of characters in line*/
+}
+
+body {
+  background-color: antiquewhite;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+h1 {
+  font-size: 2rem;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  max-width: max-content;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  background-color: antiquewhite;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  left: 0;
+  animation: typing 6s steps(var(--num)) 2s forwards;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 0.15em;
+  height: 100%;
+  z-index: 11;
+  left: 0;
+  animation: typing 6s steps(var(--num)) 2s forwards, typing-dash 0.7s infinite;
+}
+
+@keyframes typing {
+  to {
+    left: 100%;
+  }
+}
+@keyframes typing-dash {
+  to {
+    opacity: 0;
+  }
+}
